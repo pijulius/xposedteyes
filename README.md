@@ -14,7 +14,7 @@ Define your prefered ratio for the split screen, for e.g. 0.5 for half, 0.33 for
 If checked the smaller split screen (in case for e.g. if you set screen ratio to 0.33) will be on the right side instead of the left.
 
 5. Launcher.
-Define two applications and then you can set Xposed Teyes as your startup application to launch those two applications in a split screen as soon as your car starts. You will need to install [Split Screen Launcher](https://github.com/paprikanotfound/split-screen-launcher) from \"paprikanotfound\" for this to work.
+Define two applications (for e.g. "com.spotify.music" and "com.waze") and then you can set Xposed Teyes as your startup application to launch those two applications in a split screen as soon as your car starts. You will need to install [Split Screen Launcher](https://github.com/paprikanotfound/split-screen-launcher) from \"paprikanotfound\" for this to work.
 
 # Install
 Install instructions
@@ -27,4 +27,6 @@ Install instructions
 
 # Notes
 Tested on Teyes CC3 2k and vanila Android 10 so think should work on other headunits too.
+All changes except setting Launcher application will require a restart of the device.
+You can always access Settings or from LSPosed or from long holding on the Xposed Teyes launch icon.
 
