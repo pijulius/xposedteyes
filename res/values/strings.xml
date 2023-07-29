@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<string name="app_name">Xposed Teyes</string>
+	<string name="app_name_settings">Xposed Teyes Settings</string>
+	<string name="app_description">Xposed Teyes Headunit</string>
+	<string name="app_not_found">App not found</string>
+
+	<string name="pref_teyes">Teyes</string>
+	<string name="pref_resizable_splitscreen">Resizable Split Screen</string>
+	<string name="pref_resizable_splitscreen_sum">Activate module for Android Framework and also SystemUI</string>
+	<string name="pref_hide_divider">Hide Divider</string>
+	<string name="pref_hide_divider_sum">Show or hide the Split Screen Divider</string>
+	<string name="pref_screen_ratio">Screen Ratio</string>
+	<string name="pref_screen_ratio_sum">The rate by which the Screen should be Split</string>
+	<string name="pref_left_screen_position">Left Screen Position</string>
+	<string name="pref_left_screen_position_sum">If checked the smaller screen will be on Right instead of Left</string>
+	
+	<string name="pref_launcher">Launcher</string>
+	<string name="pref_first_app">First App</string>
+	<string name="pref_first_app_sum">Activity to launch at Top/Left.</string>
+	<string name="pref_second_app">Second App</string>
+	<string name="pref_second_app_sum">Activity to launch at Bottom/Right</string>
+
+	<string name="settings">Settings</string>
+	<string name="split_screen_launcher">Split Screen Launcher</string>
+	<string name="launcher_description">You can use this to automatically launch defined applications
+	    in split screen on boot. You will need to install \"Split Screen Launcher\" from \"paprikanotfound\" for this to work.</string>
+
+</resources>

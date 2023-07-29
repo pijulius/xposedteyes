@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+	xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<PreferenceCategory
+		android:title="@string/pref_teyes">
+
+		<CheckBoxPreference 
+			android:name="@string/pref_resizable_splitscreen"
+			android:summary="@string/pref_resizable_splitscreen_sum"
+			android:defaultValue="true"
+			android:title="@string/pref_resizable_splitscreen"
+			android:key="resizableSplitScreen" />
+
+		<CheckBoxPreference 
+			android:name="@string/pref_hide_divider"
+			android:summary="@string/pref_hide_divider_sum"
+			android:defaultValue="true"
+			android:title="@string/pref_hide_divider"
+			android:key="hideDivider" />
+
+		<EditTextPreference
+			android:name="@string/pref_screen_ratio"
+			android:summary="@string/pref_screen_ratio_sum"
+			android:defaultValue="0.35"
+			android:title="@string/pref_screen_ratio"
+			android:key="screenRatio" />
+
+		<CheckBoxPreference 
+			android:name="@string/pref_left_screen_position"
+			android:summary="@string/pref_left_screen_position_sum"
+			android:defaultValue="false"
+			android:title="@string/pref_left_screen_position"
+			android:key="leftScreenPosition" />
+
+	</PreferenceCategory>
+
+	<PreferenceCategory
+		android:title="@string/pref_launcher">
+
+		<EditTextPreference
+			android:name="@string/pref_first_app"
+			android:summary="@string/pref_first_app_sum"
+			android:defaultValue="com.spotify.music"
+			android:title="@string/pref_first_app"
+			android:key="launcherFirstApp" />
+
+		<EditTextPreference
+			android:name="@string/pref_second_app"
+			android:summary="@string/pref_second_app_sum"
+			android:defaultValue="com.waze"
+			android:title="@string/pref_second_app"
+			android:key="launcherSecondApp" />
+
+	</PreferenceCategory>
+
+</PreferenceScreen>
