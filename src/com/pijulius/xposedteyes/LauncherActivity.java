@@ -5,35 +5,58 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 public class LauncherActivity extends Activity {
 	SharedPreferences preferences;
+
+	String musicApp = "";
+	String navigationApp = "";
+	String videosApp = "";
 
 	@Override
 	public void onCreate(Bundle bundle) {
 		super.onCreate(bundle);
 
-		SharedPreferences preferences = getSharedPreferences("com.pijulius.xposedteyes_preferences", Context.MODE_PRIVATE);
-
-		String firstApp = preferences.getString("launcherFirstApp", "");
-		String secondApp = preferences.getString("launcherSecondApp", "");
-		Intent intent = getPackageManager().getLaunchIntentForPackage("com.fb.splitscreenlauncher");
-
-		if (intent != null && !firstApp.isEmpty() && !secondApp.isEmpty()) {
-			intent.setAction(Intent.ACTION_MAIN);
-        	intent.setClassName("com.fb.splitscreenlauncher", "com.fb.splitscreenlauncher.ui.shortcut.ShortcutActivity");
-			intent.putExtra("first", getPackageManager().getLaunchIntentForPackage(firstApp).toUri(0));
-			intent.putExtra("second", getPackageManager().getLaunchIntentForPackage(secondApp).toUri(0));
-			startActivity(intent);
+		if ("AccessibilityService".equals(getIntent().getAction())) {
+			SettingsActivity.activateAccessibilityService();
 
 			finish();
 			return;
 		}
 
-		intent = new Intent(this, SettingsActivity.class);
-		startActivity(intent);
+		SharedPreferences preferences = getSharedPreferences(getPackageName()+"_preferences", Context.MODE_PRIVATE);
 
-		finish();
-		return;
+		musicApp = preferences.getString("launcherMusicApp", "");
+		navigationApp = preferences.getString("launcherNavigationApp", "");
+		videosApp = preferences.getString("launcherVideosApp", "");
+
+		if (musicApp.isEmpty() || navigationApp.isEmpty() || videosApp.isEmpty()) {
+			setContentView(R.layout.launcher);
+
+			final Context context = getBaseContext();
+			Button settingsButton = this.findViewById(R.id.settingsButton);
+
+			settingsButton.setOnClickListener(new View.OnClickListener() {
+    	        @Override
+        	    public void onClick(View view) {
+            	    Intent i = new Intent(context, SettingsActivity.class);
+		        	startActivity(i);
+
+			        finish();
+    	        }
+			});
+		}
+	}
+
+	@Override
+	public void onResume() {
+		super.onResume();
+	}
+
+	@Override
+	public void onStop() {
+		super.onStop();
 	}
 }

@@ -27,9 +27,26 @@
             android:value="@string/app_description" />
 
         <activity
+            android:name="com.pijulius.xposedteyes.SettingsActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="de.robv.android.xposed.category.MODULE_SETTINGS" />
+            </intent-filter>
+        </activity>
+
+        <activity
             android:name="com.pijulius.xposedteyes.LauncherActivity"
+            android:theme="@android:style/Theme.NoDisplay">
+        </activity>
+
+        <activity
+            android:name="com.pijulius.xposedteyes.MusicNavigationActivity"
             android:theme="@android:style/Theme.NoDisplay"
-            android:label="@string/app_name">
+            android:label="@string/launcher_musicandnav"
+            android:icon="@drawable/logo_musicnavigation"
+            android:resizeableActivity="false">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -39,13 +56,28 @@
         </activity>
 
         <activity
-            android:name="com.pijulius.xposedteyes.SettingsActivity"
-            android:label="@string/app_name" >
+            android:name="com.pijulius.xposedteyes.NavigationVideosActivity"
+            android:theme="@android:style/Theme.NoDisplay"
+            android:label="@string/launcher_navandvideos"
+            android:icon="@drawable/logo_navigationvideos"
+            android:resizeableActivity="false">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-                <category android:name="de.robv.android.xposed.category.MODULE_SETTINGS" />
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+            <meta-data android:name="android.app.shortcuts"
+                 android:resource="@xml/shortcuts" /> 
         </activity>
+
+        <service
+                android:name="com.pijulius.xposedteyes.LauncherService"
+                android:label="@string/app_name"
+                android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService" />
+            </intent-filter>
+            <meta-data android:name="android.accessibilityservice" android:resource="@xml/launcherservice" />
+        </service>
 
     </application>
 

@@ -13,18 +13,42 @@
 			android:key="resizableSplitScreen" />
 
 		<CheckBoxPreference 
-			android:name="@string/pref_hide_divider"
-			android:summary="@string/pref_hide_divider_sum"
+			android:name="@string/pref_dont_exit_splitscreen"
+			android:summary="@string/pref_dont_exit_splitscreen_sum"
 			android:defaultValue="true"
-			android:title="@string/pref_hide_divider"
-			android:key="hideDivider" />
+			android:title="@string/pref_dont_exit_splitscreen"
+			android:key="dontExitSplitScreen" />
 
 		<EditTextPreference
 			android:name="@string/pref_screen_ratio"
 			android:summary="@string/pref_screen_ratio_sum"
-			android:defaultValue="0.35"
+			android:defaultValue="0.33"
 			android:title="@string/pref_screen_ratio"
 			android:key="screenRatio" />
+
+		<CheckBoxPreference 
+			android:disableDependentsState="true"
+			android:name="@string/pref_hide_divider"
+			android:summary="@string/pref_hide_divider_sum"
+			android:defaultValue="false"
+			android:title="@string/pref_hide_divider"
+			android:key="hideDivider" />
+
+		<EditTextPreference
+			android:dependency="hideDivider"
+			android:name="@string/pref_divider_width"
+			android:summary="@string/pref_divider_width_sum"
+			android:defaultValue="22"
+			android:title="@string/pref_divider_width"
+			android:key="dividerWidth" />
+
+		<EditTextPreference
+			android:dependency="hideDivider"
+			android:name="@string/pref_divider_inset_position"
+			android:summary="@string/pref_divider_inset_position_sum"
+			android:defaultValue="10"
+			android:title="@string/pref_divider_inset_position"
+			android:key="dividerInsetPosition" />
 
 		<CheckBoxPreference 
 			android:name="@string/pref_left_screen_position"
@@ -38,19 +62,40 @@
 	<PreferenceCategory
 		android:title="@string/pref_launcher">
 
-		<EditTextPreference
-			android:name="@string/pref_first_app"
-			android:summary="@string/pref_first_app_sum"
-			android:defaultValue="com.spotify.music"
-			android:title="@string/pref_first_app"
-			android:key="launcherFirstApp" />
+		<CheckBoxPreference 
+			android:name="@string/pref_launch_on_startup"
+			android:summary="@string/pref_launch_on_startup_sum"
+			android:defaultValue="true"
+			android:title="@string/pref_launch_on_startup"
+			android:key="launchOnStartup" />
 
 		<EditTextPreference
-			android:name="@string/pref_second_app"
-			android:summary="@string/pref_second_app_sum"
+			android:name="@string/pref_music_app"
+			android:summary="@string/pref_music_app_sum"
+			android:defaultValue="com.audials"
+			android:title="@string/pref_music_app"
+			android:key="launcherMusicApp" />
+
+		<EditTextPreference
+			android:name="@string/pref_navigation_app"
+			android:summary="@string/pref_navigation_app_sum"
 			android:defaultValue="com.waze"
-			android:title="@string/pref_second_app"
-			android:key="launcherSecondApp" />
+			android:title="@string/pref_navigation_app"
+			android:key="launcherNavigationApp" />
+
+		<EditTextPreference
+			android:name="@string/pref_videos_app"
+			android:summary="@string/pref_videos_app_sum"
+			android:defaultValue="video.player.videoplayer"
+			android:title="@string/pref_videos_app"
+			android:key="launcherVideosApp" />
+
+		<EditTextPreference
+			android:name="@string/pref_mini_desktop_dpi"
+			android:summary="@string/pref_mini_desktop_dpi_sum"
+			android:defaultValue="500"
+			android:title="@string/pref_mini_desktop_dpi"
+			android:key="miniDesktopDPI" />
 
 	</PreferenceCategory>
 

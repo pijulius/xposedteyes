@@ -9,22 +9,48 @@
 	<string name="pref_teyes">Teyes</string>
 	<string name="pref_resizable_splitscreen">Resizable Split Screen</string>
 	<string name="pref_resizable_splitscreen_sum">Activate module for Android Framework and also SystemUI</string>
+	<string name="pref_dont_exit_splitscreen">Dont Exit Split Screen</string>
+	<string name="pref_dont_exit_splitscreen_sum">Keep splitscreen on when pressing home key.</string>
 	<string name="pref_hide_divider">Hide Divider</string>
 	<string name="pref_hide_divider_sum">Show or hide the Split Screen Divider</string>
+	<string name="pref_divider_width">Divider Width</string>
+	<string name="pref_divider_width_sum">Space between the two applications in split view (use 0 for default).</string>
+	<string name="pref_divider_inset_position">Divider Inset Position</string>
+	<string name="pref_divider_inset_position_sum">Dividers inset position relative to the divider width.</string>
 	<string name="pref_screen_ratio">Screen Ratio</string>
 	<string name="pref_screen_ratio_sum">The rate by which the Screen should be Split</string>
 	<string name="pref_left_screen_position">Left Screen Position</string>
 	<string name="pref_left_screen_position_sum">If checked the smaller screen will be on Right instead of Left</string>
-	
+
 	<string name="pref_launcher">Launcher</string>
-	<string name="pref_first_app">First App</string>
-	<string name="pref_first_app_sum">Activity to launch at Top/Left.</string>
-	<string name="pref_second_app">Second App</string>
-	<string name="pref_second_app_sum">Activity to launch at Bottom/Right</string>
+	<string name="pref_launch_on_startup">Launch Music &amp; Nav on Startup</string>
+	<string name="pref_launch_on_startup_sum">Launch the Music and Navigation application automatically in splitscreen.</string>
+	<string name="pref_music_app">Music App</string>
+	<string name="pref_music_app_sum">Music application to launch in Split Screen on Left.</string>
+	<string name="pref_navigation_app">Navigation App</string>
+	<string name="pref_navigation_app_sum">Navigation application to launch in Split Screen on Right/Left</string>
+	<string name="pref_videos_app">Videos App</string>
+	<string name="pref_videos_app_sum">Videos application to launch in Split Screen on Right</string>
+	<string name="pref_mini_desktop_dpi">Mini Desktop DPI</string>
+	<string name="pref_mini_desktop_dpi_sum">DPI for the Mini Desktop Launcher.</string>
 
 	<string name="settings">Settings</string>
-	<string name="split_screen_launcher">Split Screen Launcher</string>
+	<string name="accessibility_description">Used to launch applications in split screen</string>
 	<string name="launcher_description">You can use this to automatically launch defined applications
-	    in split screen on boot. You will need to install \"Split Screen Launcher\" from \"paprikanotfound\" for this to work.</string>
+	    in split screen on boot. Please define the apps in the settings for this to work.</string>
+
+	<string name="activate_launcher_service">Activate Launcher Services</string>
+	<string name="activate_launcher_service_sum">* Only needed if you want to launch applications in split screen 
+		mode automatically. If you use FYTStarter you can activate service there otherwise please give root
+		access to this app so it can active the service automatially by itself.</string>
+
+	<string name="launcher_musicandnav">Music &amp; Nav</string>
+	<string name="launcher_navandvideos">Nav &amp; Videos</string>
+
+	<string name="toast_accessibility_service_request">Activating service requires root. Please grant access.</string>
+	<string name="toast_accessibility_service_failed">Activation failed.</string>
+	<string name="toast_accessibility_service_succeeded">Activation succeeded.</string>
+	<string name="toast_app_not_found">Application not found. Please set Music, Navigation and Videos applications 
+		correctly in settings.</string>
 
 </resources>

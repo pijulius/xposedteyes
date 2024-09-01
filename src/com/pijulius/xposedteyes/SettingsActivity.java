@@ -1,8 +1,8 @@
 package com.pijulius.xposedteyes;
 
+import java.io.DataOutputStream;
 import java.io.File;
 
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.os.AsyncTask;
@@ -10,7 +10,7 @@ import android.os.Bundle;
 import android.preference.PreferenceActivity;
 import android.view.View;
 import android.widget.Button;
-import android.net.Uri;
+import android.widget.Toast;
 
 @SuppressWarnings("deprecation")
 public class SettingsActivity extends PreferenceActivity implements OnSharedPreferenceChangeListener {
@@ -21,6 +21,9 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
 	}
 
 	public void fixSharedPreferencesPermission() {
+		if (sharedPreferencesPath == null)
+			return;
+
 		AsyncTask.execute(new Runnable() {
 			@Override
 			public void run() {
@@ -34,6 +37,29 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
 					sharedPrefsFile.setReadable(true, false);
 			}
 		});
+	}
+
+	public static int activateAccessibilityService() {
+		Process p = null;
+		int result = 0;
+
+		try {
+			p = Runtime.getRuntime().exec("su");
+
+			DataOutputStream os = new DataOutputStream(p.getOutputStream());
+			os.writeBytes(
+				"settings put secure enabled_accessibility_services " +
+				"com.pijulius.xposedteyes/com.pijulius.xposedteyes.LauncherService\n");
+
+			os.writeBytes("exit\n");
+			os.flush();
+
+			result = p.waitFor();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return result;
 	}
 
 	@Override
@@ -52,13 +78,25 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
 		addPreferencesFromResource(R.xml.settings);
 		setContentView(R.layout.settings);
 
-		Button marketButton = findViewById(R.id.marketButton);
+		Button marketButton = findViewById(R.id.activateLauncherServiceButton);
 
 		marketButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.fb.splitscreenlauncher"));
-		        startActivity(i);
+				Toast.makeText(
+					getBaseContext(), getString(R.string.toast_accessibility_service_request), Toast.LENGTH_SHORT)
+				.show();
+
+				if (activateAccessibilityService() != 0) {
+					Toast.makeText(
+						getBaseContext(), getString(R.string.toast_accessibility_service_failed), Toast.LENGTH_SHORT)
+					.show();
+
+				} else {
+					Toast.makeText(
+						getBaseContext(), getString(R.string.toast_accessibility_service_succeeded), Toast.LENGTH_SHORT)
+					.show();
+				}
             }
         });
 	}
@@ -67,6 +105,8 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
 	protected void onPause() {
 		super.onPause();
 		fixSharedPreferencesPermission();
+
+		finish();
 	}
 
 	@Override
