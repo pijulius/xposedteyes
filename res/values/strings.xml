@@ -22,6 +22,32 @@
 	<string name="pref_left_screen_position">Left Screen Position</string>
 	<string name="pref_left_screen_position_sum">If checked the smaller screen will be on Right instead of Left</string>
 
+	<string name="pref_camera">Camera</string>
+	<string name="pref_camera_width">Preview Width</string>
+	<string name="pref_camera_width_sum">Width of the camera preview image.</string>
+	<string name="pref_camera_height">Preview Height</string>
+	<string name="pref_camera_height_sum">Height of the camera preview image.</string>
+	<string name="pref_camera_x">Preview X Position</string>
+	<string name="pref_camera_x_sum">X position for the camera preview image.</string>
+	<string name="pref_camera_y">Preview Y Position</string>
+	<string name="pref_camera_y_sum">Y position for the camera preview image.</string>
+	<string name="pref_camera_warning">Show Warning</string>
+	<string name="pref_camera_warning_sum">Show the warning message on the camera preview.</string>
+	<string name="pref_camera_enhance">Enhance Preview</string>
+	<string name="pref_camera_enhance_sum">Add antialias, dithering to the camera preview.</string>
+	<string name="pref_camera_round">Rounded Corners</string>
+	<string name="pref_camera_round_sum">Use rounded corners for the preview image.</string>
+
+	<string name="pref_carlink">CarLink</string>
+	<string name="pref_carlink_resolution">Video Resolution</string>
+	<string name="pref_carlink_resolution_sum">Prefered video resolution for Android Auto.</string>
+	<string name="pref_carlink_resolution_width_margin">Width Margin</string>
+	<string name="pref_carlink_resolution_width_margin_sum">Margin for the width of the video resolution.</string>
+	<string name="pref_carlink_resolution_height_margin">Height Margin</string>
+	<string name="pref_carlink_resolution_height_margin_sum">Margin for the height of the video resolution.</string>
+	<string name="pref_carlink_dpi">Custom DPI</string>
+	<string name="pref_carlink_dpi_sum">Set custom DPI for changing Android Auto layout.</string>
+
 	<string name="pref_launcher">Launcher</string>
 	<string name="pref_launch_on_startup">Launch Music &amp; Nav on Startup</string>
 	<string name="pref_launch_on_startup_sum">Launch the Music and Navigation application automatically in splitscreen.</string>

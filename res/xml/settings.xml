@@ -50,7 +50,7 @@
 			android:title="@string/pref_divider_inset_position"
 			android:key="dividerInsetPosition" />
 
-		<CheckBoxPreference 
+		<CheckBoxPreference
 			android:name="@string/pref_left_screen_position"
 			android:summary="@string/pref_left_screen_position_sum"
 			android:defaultValue="false"
@@ -60,12 +60,100 @@
 	</PreferenceCategory>
 
 	<PreferenceCategory
+		android:title="@string/pref_camera">
+
+		<EditTextPreference
+			android:name="@string/pref_camera_width"
+			android:summary="@string/pref_camera_width_sum"
+			android:defaultValue="1600"
+			android:title="@string/pref_camera_width"
+			android:key="cameraWidth" />
+
+		<EditTextPreference
+			android:name="@string/pref_camera_height"
+			android:summary="@string/pref_camera_height_sum"
+			android:defaultValue="1000"
+			android:title="@string/pref_camera_height"
+			android:key="cameraHeight" />
+
+		<EditTextPreference
+			android:name="@string/pref_camera_x"
+			android:summary="@string/pref_camera_x_sum"
+			android:defaultValue="400"
+			android:title="@string/pref_camera_x"
+			android:key="cameraX" />
+
+		<EditTextPreference
+			android:name="@string/pref_camera_y"
+			android:summary="@string/pref_camera_y_sum"
+			android:defaultValue="100"
+			android:title="@string/pref_camera_y"
+			android:key="cameraY" />
+
+		<CheckBoxPreference
+			android:name="@string/pref_camera_warning"
+			android:summary="@string/pref_camera_warning_sum"
+			android:defaultValue="true"
+			android:title="@string/pref_camera_warning"
+			android:key="cameraWarning" />
+
+		<CheckBoxPreference
+			android:name="@string/pref_camera_enhance"
+			android:summary="@string/pref_camera_enhance_sum"
+			android:defaultValue="true"
+			android:title="@string/pref_camera_enhance"
+			android:key="cameraEnhance" />
+
+		<CheckBoxPreference
+			android:name="@string/pref_camera_round"
+			android:summary="@string/pref_camera_round_sum"
+			android:defaultValue="true"
+			android:title="@string/pref_camera_round"
+			android:key="cameraRound" />
+
+	</PreferenceCategory>
+
+	<PreferenceCategory
+		android:title="@string/pref_carlink">
+
+		<ListPreference
+			android:title="@string/pref_carlink_resolution"
+			android:summary="@string/pref_carlink_resolution_sum"
+			android:defaultValue=""
+			android:entries="@array/pref_carlink_resolutions"
+			android:entryValues="@array/pref_carlink_resolution_values"
+			android:key="carlinkResolution" />
+
+		<EditTextPreference
+			android:name="@string/pref_carlink_resolution_width_margin"
+			android:summary="@string/pref_carlink_resolution_width_margin_sum"
+			android:defaultValue="0"
+			android:title="@string/pref_carlink_resolution_width_margin"
+			android:key="carlinkResolutionWidthMargin" />
+
+		<EditTextPreference
+			android:name="@string/pref_carlink_resolution_height_margin"
+			android:summary="@string/pref_carlink_resolution_height_margin_sum"
+			android:defaultValue="0"
+			android:title="@string/pref_carlink_resolution_height_margin"
+			android:key="carlinkResolutionHeightMargin" />
+
+		<EditTextPreference
+			android:name="@string/pref_carlink_dpi"
+			android:summary="@string/pref_carlink_dpi_sum"
+			android:defaultValue="0"
+			android:title="@string/pref_carlink_dpi"
+			android:key="carlinkDPI" />
+
+	</PreferenceCategory>
+
+	<PreferenceCategory
 		android:title="@string/pref_launcher">
 
 		<CheckBoxPreference 
 			android:name="@string/pref_launch_on_startup"
 			android:summary="@string/pref_launch_on_startup_sum"
-			android:defaultValue="true"
+			android:defaultValue="false"
 			android:title="@string/pref_launch_on_startup"
 			android:key="launchOnStartup" />
 
