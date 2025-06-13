@@ -309,12 +309,12 @@ public class XposedTeyes implements IXposedHookInitPackageResources, IXposedHook
 						if (cameraWidth != 0)
 							layoutParams.width = cameraWidth;
 						if (cameraHeight != 0)
-							layoutParams.height = cameraHeight-(cameraRound?50:0);
+							layoutParams.height = cameraHeight-(cameraRound?40:0);
 
 						if (cameraX != 0)
 							texture.setX(cameraX);
 						if (cameraY != 0 || cameraRound)
-							texture.setY(cameraY+(cameraRound?25:0));
+							texture.setY(cameraY+(cameraRound?20:0));
 
 						texture.setLayoutParams(layoutParams);
 
